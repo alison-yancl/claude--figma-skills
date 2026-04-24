@@ -3,7 +3,7 @@
 Three Claude Code skills that take a feature idea to polished Figma screens — without the tedious parts.
 
 ```
-/design-spec  →  /figma-design  →  (you adjust in Figma)  →  /design-review
+/design-spec  →  /figma-design  →  (Iteration)  →  /design-review
 ```
 
 Each skill runs as a slash command inside Claude Code. They handle structuring specs, mining real sample data from existing demos, instantiating library components, and auditing token compliance — so you can focus on the design decisions that actually matter.
