@@ -8,6 +8,11 @@ Three Claude Code skills that take a feature idea to polished Figma screens — 
 
 Each skill runs as a slash command inside Claude Code. They handle structuring specs, mining real sample data from existing demos, instantiating library components, and auditing token compliance — so you can focus on the design decisions that actually matter.
 
+## Prerequisites
+
+- [Claude Code](https://claude.com/claude-code) installed
+- **Figma MCP server connected** — required for `/figma-design` and `/design-review`. These skills talk to Figma through MCP; without it, they can't read files, instantiate components, or apply fixes. Set it up via `claude mcp add` or your `.mcp.json` before running either skill. `/design-spec` works without Figma MCP.
+
 ## Quickstart
 
 ```bash
@@ -59,6 +64,8 @@ Turns a feature description into a `design-spec.md`: per-screen element tables, 
 
 ## 2. `/figma-design` — Build screens in Figma
 
+> **Requires Figma MCP.** Connect the Figma MCP server in Claude Code first, or this skill can't reach your Figma file.
+
 Reads the spec and builds screens in Figma using real library components, bound tokens, and proper text styles.
 
 **Does**
@@ -106,6 +113,8 @@ Move on to `/design-review` once layout feels right and only token/style cleanup
 ---
 
 ## 3. `/design-review` — Audit and auto-fix
+
+> **Requires Figma MCP.** Same as `/figma-design` — it reads and mutates nodes through the MCP server.
 
 Audits every element for style compliance and fixes what it can unambiguously.
 
